@@ -1,8 +1,8 @@
-## Aegis API
+## Botler-API
 Provides an HTTP endpoint for issuing commands to an iRobot Create.
 
 ### Getting started
 
-- `export MOCK=True` (for mock roomba)
+- `export MOCK=True` (to utilize fake roomba)
 - `export FLASK_APP=app.py`
-- `flask run`
+- `python3 -m flask run`
