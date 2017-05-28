@@ -1,0 +1,18 @@
+FROM resin/rpi-raspbian:wheezy 
+
+RUN apt-get update && apt-get install -y \
+    python \
+    python-dev \
+    python-pip \
+    python-virtualenv \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
+
+ADD . /home/botler-api/
+WORKDIR /home/botler-api/
+
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT ["/home/botler-api/run.sh"] 
+
+EXPOSE 5000
